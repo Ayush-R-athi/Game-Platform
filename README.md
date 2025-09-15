@@ -30,7 +30,7 @@ Welcome to the **Game Platform**, a modern take on two timeless classics — **T
 
 Experience the games directly in your browser with a rustic wooden board theme.
 
-➡️ [Play Now](https://your-game-platform-url.com)
+➡️ [Play Now](https://game-platform-ivory.vercel.app/)
 
 ---
 
