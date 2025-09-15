@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wooden Game Platform</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+
+        <div id="screen-welcome" class="screen">
+            <h1>Welcome to the Game Board</h1>
+            <h2>Choose a Game</h2>
+            <button class="menu-button" data-game="tictactoe">Tic-Tac-Toe</button>
+            <button class="menu-button" data-game="connect4">Connect 4</button>
+        </div>
+
+        <div id="screen-platform" class="screen hidden">
+            <h1 id="platform-title">Tic-Tac-Toe</h1>
+            <h2>How would you like to play?</h2>
+            <button class="menu-button" id="play-online-btn">Play Online</button>
+            <a id="download-btn" href="#"><button class="menu-button">Download (.exe)</button></a>
+            <button class="back-button" data-target="screen-welcome">Back</button>
+        </div>
+
+        <div id="screen-mode" class="screen hidden">
+            <h1 id="mode-title">Tic-Tac-Toe</h1>
+            <h2>Choose Your Opponent</h2>
+            <button class="menu-button" data-mode="pvp">Player vs. Player</button>
+            <button class="menu-button" data-mode="pva">Player vs. AI</button>
+            <button class="back-button" data-target="screen-platform">Back</button>
+        </div>
+
+        <div id="screen-difficulty" class="screen hidden">
+            <h1 id="difficulty-title">Tic-Tac-Toe</h1>
+            <h2>Choose AI Difficulty</h2>
+            <button class="menu-button" data-difficulty="easy">Easy</button>
+            <button class="menu-button" data-difficulty="medium">Medium</button>
+            <button class="menu-button" data-difficulty="hard">Hard</button>
+            <button class="back-button" data-target="screen-mode">Back</button>
+        </div>
+
+        <div id="screen-game" class="screen hidden">
+            <h1 id="status-text">Tic-Tac-Toe</h1>
+            <div id="game-board-container"></div>
+            <div class="game-controls">
+                <button class="menu-button" id="restart-game-btn">Restart</button>
+                <button class="menu-button" id="game-back-btn">Back</button>
+                <button class="menu-button" id="main-menu-btn">Main Menu</button>
+            </div>
+        </div>
+
+    </div>
+    
+    <script src="ai_tictactoe.js"></script>
+    <script src="tictactoe.js"></script>
+    <script src="ai_connect4.js"></script> <script src="connect4.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

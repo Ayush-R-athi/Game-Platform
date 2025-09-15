@@ -1,0 +1,98 @@
+/* --- Basic Page Setup --- */
+body {
+    background-image: url('assets/images/felt_background.jpeg');
+    background-size: cover;
+    font-family: 'Merriweather', serif;
+    color: #F5F5DC;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+}
+
+h1 { text-shadow: 2px 2px 4px #000; }
+h2 { text-shadow: 1px 1px 3px #000; font-weight: normal; }
+.container { width: 90%; max-width: 500px; }
+
+/* --- Screen Management --- */
+.screen {}
+.hidden { display: none; }
+
+
+/* --- CSS-Based Wooden Menu Buttons --- */
+.menu-button, .back-button {
+    background: linear-gradient(90deg, #8B4513 0%, #A0522D 25%, #8B4513 50%, #A0522D 75%, #8B4513 100%);
+    border: 2px solid #654321;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4), inset 0 2px 2px rgba(255,255,255,0.2);
+    width: 250px;
+    height: 60px;
+    margin-top: 15px;
+    cursor: pointer;
+    font-family: 'Merriweather', serif;
+    font-size: 1.1rem;
+    color: #F5F5DC;
+    text-shadow: 1px 1px 2px #000;
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+
+.menu-button:hover, .back-button:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.5), inset 0 2px 2px rgba(255,255,255,0.2);
+}
+
+a { text-decoration: none; }
+.back-button { margin-top: 30px; }
+.menu-button:disabled {
+    filter: grayscale(80%) brightness(0.7);
+    cursor: not-allowed;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4), inset 0 2px 2px rgba(255,255,255,0.2);
+}
+.menu-button:disabled:hover { transform: none; }
+
+/* In-Game Controls Styling */
+.game-controls { display: flex; justify-content: center; gap: 10px; margin-top: 20px; }
+.game-controls .menu-button { width: 130px; font-size: 1rem; margin-top: 0; padding: 10px 0; }
+
+
+/* --- Tic-Tac-Toe Game Board Styling --- */
+.tictactoe-board {
+    background-image: url('assets/images/wood_texture.jpeg');
+    background-size: cover;
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5), inset 0 0 10px rgba(0,0,0,0.7);
+    margin: 20px auto;
+    width: 320px;
+}
+
+.tictactoe-cell { cursor: pointer; background-size: 80%; background-position: center; background-repeat: no-repeat; transition: background-color 0.2s; }
+.tictactoe-cell:hover { background-color: rgba(255, 255, 255, 0.1); border-radius: 5px; }
+.tictactoe-cell.x { background-image: url('assets/images/piece_x.png'); }
+.tictactoe-cell.o { background-image: url('assets/images/piece_o.png'); }
+
+
+/* --- Connect 4 Game Board Styling --- */
+.connect4-board {
+    background-color: #1976D2;
+    display: grid;
+    grid-template-columns: repeat(7, 50px);
+    grid-template-rows: repeat(6, 50px);
+    gap: 5px;
+    padding: 10px;
+    border: 5px solid #654321;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    margin: 20px auto;
+    width: 395px;
+}
+
+.connect4-cell { width: 50px; height: 50px; border-radius: 50%; background-color: #2E3440; box-shadow: inset 0 3px 5px rgba(0,0,0,0.5); cursor: pointer; }
+.connect4-cell.red { background-color: #D32F2F; }
+.connect4-cell.yellow { background-color: #FBC02D; }
