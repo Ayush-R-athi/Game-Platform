@@ -1,72 +1,66 @@
-Game Platform: Tic-Tac-Toe & Connect 4
-Welcome to the official repository for the Game Platform, a project featuring two classic games with modern user interfaces and intelligent AI opponents. This platform provides two ways to play: directly in your web browser or by downloading standalone executable files for Windows.
+# 🎲 Game Platform: Tic-Tac-Toe & Connect 4
 
+Welcome to the **Game Platform**, a modern take on two timeless classics — **Tic-Tac-Toe** and **Connect 4**. Play in your web browser or download standalone executables for Windows and enjoy sleek designs, smooth animations, and challenging AI opponents!
 
-🚀 How to Play
-You have two options to enjoy these games.
+---
 
-🎮 Play Online (Web Version)
-The entire game portal is hosted online and can be played directly in any modern web browser. The web version features a rustic, wooden board theme.
+## 🚀 Features
 
-➡️ Play Now! <!-- This is your likely GitHub Pages URL. Update if it's different. -->
+### ✅ Two Classic Games
+- **Tic-Tac-Toe**  
+  - Elegant **Neon** theme with dark backgrounds and glowing pieces.
+  - Smooth and responsive gameplay.
 
-💻 Download for Windows
-For the best offline experience, you can download the standalone .exe files. Each game has its own unique, modern theme. No installation is required. The download is a single .zip file containing both games.
+- **Connect 4**  
+  - Minimalist, clean interface with bright visuals.
+  - Fluid piece-drop animations for an immersive experience.
 
-➡️ Download Latest Release (v1.0):- https://github.com/Ayush-R-athi/Game-Platform/releases/download/v1.0/Windows-Games.zip
+### ✅ Game Modes
+- **Player vs Player** – Play with friends locally or online.
+- **Player vs AI** – Challenge intelligent computer opponents.
 
-🌟 Features
-This project includes two fully-featured games:
+### ✅ AI Difficulty Levels
+- **Easy** – AI makes random moves.
+- **Medium** – AI blocks your wins and grabs opportunities.
+- **Hard** – AI uses Minimax with Alpha-Beta Pruning. Beat it if you can!
 
-1. Tic-Tac-Toe
-Desktop Theme: A sleek "Neon" aesthetic with a dark background and glowing game pieces.
+---
 
-Game Modes:
+## 🎮 Play Online
 
-Player vs. Player: Go head-to-head with a friend.
+Experience the games directly in your browser with a rustic wooden board theme.
 
-Player vs. AI: Challenge our intelligent computer opponent.
+➡️ [Play Now](https://your-game-platform-url.com)
 
-AI Difficulty Levels:
+---
 
-Easy: The AI plays randomly.
+## 💻 Download for Windows
 
-Medium: The AI will block wins and take winning opportunities.
+For the best offline experience, download the ready-to-use executable files for Windows. No installation required!
 
-Hard: An unbeatable AI using a Minimax algorithm with Alpha-Beta Pruning. You can only tie or lose!
+📦 [Download Latest Release (v1.0)](https://github.com/Ayush-R-athi/Game-Platform/releases/download/v1.0/Windows-Games.zip)
 
-2. Connect 4
-Desktop Theme: A clean and minimalist design with a bright UI and smooth, satisfying piece-drop animations.
+Unzip and start playing instantly!
 
-Game Modes:
+---
 
-Player vs. Player
+## 🛠 Built With
 
-Player vs. AI
+### **Web Version**
+- HTML5
+- CSS3 (Flexbox & Grid Layouts)
+- JavaScript (ES6+)
 
-AI Difficulty Levels:
+### **Desktop Version**
+- Python 3
+- Tkinter (GUI Framework)
+- PyInstaller (Packaging)
 
-Easy, Medium, and Hard modes powered by a depth-limited Minimax algorithm with Alpha-Beta Pruning and a heuristic scoring function to make intelligent moves.
+### **AI Engine**
+- Minimax Algorithm with Alpha-Beta Pruning
+- Heuristic Scoring for smarter gameplay
 
-🛠️ Built With
-Web Version:
+---
 
-HTML5
+## 📂 File Structure
 
-CSS3 (with Flexbox/Grid for layout)
-
-JavaScript (ES6+)
-
-Desktop Version:
-
-Python 3
-
-Tkinter (for the GUI)
-
-AI Engine:
-
-Minimax Algorithm with Alpha-Beta Pruning
-
-Packaging:
-
-PyInstaller
