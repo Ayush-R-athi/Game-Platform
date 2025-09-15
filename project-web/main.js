@@ -7,19 +7,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const screens = document.querySelectorAll('.screen');
     const boardContainer = document.getElementById('game-board-container');
     const statusText = document.getElementById('status-text');
+    const downloadBtn = document.getElementById('download-btn');
 
-    // --- Screen Management ---
+    // --- Final Download Link ---
+    // Since both games are in one zip file, we only need one link.
+    const downloadLink = "https://github.com/Ayush-R-athi/Game-Platform/releases/download/v1.0/Windows-Games.zip";
+    // -----------------------------------------------------------------
+
+    // --- Update the download button's link immediately ---
+    downloadBtn.href = downloadLink;
+
+
     function showScreen(screenId) {
         screens.forEach(screen => screen.classList.toggle('hidden', screen.id !== screenId));
     }
 
-    // --- Game Initialization ---
     function startGame() {
-        if (gameSettings.game === 'tictactoe') {
-            setupTicTacToe();
-        } else if (gameSettings.game === 'connect4') {
-            setupConnect4(); // Fixed the syntax error here
-        }
+        if (gameSettings.game === 'tictactoe') setupTicTacToe();
+        else if (gameSettings.game === 'connect4') setupConnect4();
         showScreen('screen-game');
     }
 
@@ -32,15 +37,12 @@ document.addEventListener('DOMContentLoaded', () => {
         statusText.textContent = `${activeGame.currentPlayer}'s Turn`;
         document.querySelectorAll('.tictactoe-cell').forEach(cell => cell.addEventListener('click', handleTicTacToeMove));
     }
-
     function handleTicTacToeMove(event) {
         const cellIndex = parseInt(event.target.dataset.index);
         if (activeGame.board[cellIndex] !== '' || !activeGame.isGameActive || (gameSettings.mode === 'pva' && activeGame.currentPlayer === 'O')) return;
-
         makeTicTacToeMove(cellIndex, activeGame.currentPlayer);
         if (checkTicTacToeResult()) return;
         switchPlayer();
-
         if (gameSettings.mode === 'pva' && activeGame.currentPlayer === 'O' && activeGame.isGameActive) {
             boardContainer.style.pointerEvents = 'none';
             setTimeout(() => {
@@ -51,12 +53,10 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 500);
         }
     }
-
     function makeTicTacToeMove(index, player) {
         activeGame.board[index] = player;
         document.querySelector(`.tictactoe-cell[data-index='${index}']`).classList.add(player.toLowerCase());
     }
-
     function checkTicTacToeResult() {
         if (checkWinner(activeGame.board, activeGame.currentPlayer)) {
             statusText.textContent = `${activeGame.currentPlayer} Wins!`;
@@ -73,25 +73,19 @@ document.addEventListener('DOMContentLoaded', () => {
     function setupConnect4() {
         createConnect4Board(boardContainer);
         activeGame.board = Array(C4_ROWS).fill(null).map(() => Array(C4_COLS).fill(''));
-        activeGame.currentPlayer = 'R'; // R for Red
+        activeGame.currentPlayer = 'R';
         activeGame.isGameActive = true;
         statusText.textContent = `Red's Turn`;
         boardContainer.querySelector('.connect4-board').addEventListener('click', handleConnect4Move);
     }
-
     function handleConnect4Move(event) {
         if (!activeGame.isGameActive || !event.target.matches('.connect4-cell') || (gameSettings.mode === 'pva' && activeGame.currentPlayer === 'Y')) return;
-
         const col = parseInt(event.target.dataset.col);
         const row = findLowestEmptyRow(col, activeGame.board);
-
-        if (row === -1) return; // Column is full
-
+        if (row === -1) return;
         makeConnect4Move(row, col, activeGame.currentPlayer);
         if (checkConnect4Result()) return;
         switchPlayer();
-
-        // AI's turn for Connect 4
         if (gameSettings.mode === 'pva' && activeGame.currentPlayer === 'Y' && activeGame.isGameActive) {
             boardContainer.style.pointerEvents = 'none';
             setTimeout(() => {
@@ -105,13 +99,11 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 500);
         }
     }
-
     function makeConnect4Move(row, col, player) {
         activeGame.board[row][col] = player;
         const color = player === 'R' ? 'red' : 'yellow';
         document.querySelector(`.connect4-cell[data-row='${row}'][data-col='${col}']`).classList.add(color);
     }
-
     function checkConnect4Result() {
         if (checkConnect4Win(activeGame.board, activeGame.currentPlayer)) {
             const winner = activeGame.currentPlayer === 'R' ? 'Red' : 'Yellow';
@@ -125,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return false;
     }
 
-    // --- Shared Game Logic ---
+    // --- Shared Logic ---
     function switchPlayer() {
         if (gameSettings.game === 'tictactoe') {
             activeGame.currentPlayer = activeGame.currentPlayer === 'X' ? 'O' : 'X';
@@ -139,9 +131,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Menu Navigation Event Listener ---
     document.body.addEventListener('click', (e) => {
-        const target = e.target;
+        const target = e.target.closest('button');
+        if (!target) return;
+
         if (target.matches('[data-game]')) {
             gameSettings.game = target.dataset.game;
+            // The download link is already set, so we don't need to update it per game
             document.querySelectorAll('#platform-title, #mode-title, #difficulty-title').forEach(el => {
                 el.textContent = gameSettings.game === 'tictactoe' ? 'Tic-Tac-Toe' : 'Connect 4';
             });
@@ -167,3 +162,4 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Initial Setup ---
     showScreen('screen-welcome');
 });
+
