@@ -63,4 +63,41 @@ Unzip and start playing instantly!
 ---
 
 ## 📂 File Structure
+          Game-Platform/
+├── web/
+│ ├── index.html
+│ ├── styles.css
+│ └── script.js
+├── desktop/
+│ ├── tic_tac_toe.py
+│ ├── connect4.py
+│ └── assets/
+├── README.md
+└── LICENSE
+
+## 📈 Roadmap
+
+✔ Tic-Tac-Toe with AI  
+✔ Connect 4 with AI  
+✔ Responsive web interface  
+✔ Offline desktop builds  
+
+✨ Upcoming features:
+- Multiplayer online mode  
+- Enhanced animations  
+- More AI strategies  
+
+---
+
+## 🤝 Contribution
+
+We welcome contributions! Feel free to fork this repository, create pull requests, or report issues.
+
+---
+
+## 📬 Contact
+
+For suggestions or feedback, feel free to open an issue or reach out to us!
+
+Happy gaming! 🎮🧩
 
